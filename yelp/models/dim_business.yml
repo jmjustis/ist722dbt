@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_business
+    description: Business Dimension. One row per business
+    columns:
+      - name: businesskey
+        description: The surrogate key of the business
+        tests:
+          - not_null
+          - unique
+      - name: business_id
+        description: The business / source key of the business
+        tests:
+          - not_null
+          - unique

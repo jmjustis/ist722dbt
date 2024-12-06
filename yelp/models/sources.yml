@@ -1,0 +1,52 @@
+version: 2
+sources:
+- name: conformed
+  database: raw
+  schema: conformed
+  tables:
+  - name: DateDimension
+    columns:
+      - name: DateKey
+        tests:
+          - unique
+
+- name: yelp
+  database: YELP
+  schema: Public
+  tables:
+    - name: Business
+      columns:
+        - name: Business_Id
+          tests:
+            - unique
+    - name: Review
+      columns:
+        - name: Review_Id
+          tests:
+            - unique
+    - name: Tip
+      columns:
+        - name: Tip_Id
+          tests:
+            - unique
+    - name: User
+      columns:
+        - name: User_Id
+          tests:
+            - unique
+    - name: Checkin
+      columns:
+        - name: Checkin_Id
+          tests:
+            - unique
+    - name: Orders
+      columns:
+        - name: OrderId
+          tests:
+            - unique
+    - name: Order_Details
+      tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - OrderId
+            - ProductId

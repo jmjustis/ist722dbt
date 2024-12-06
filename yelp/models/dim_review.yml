@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_review
+    description: Review Dimension. One row per review
+    columns:
+      - name: reviewkey
+        description: The surrogate key of the review
+        tests:
+          - not_null
+          - unique
+      - name: review_id
+        description: The business / source key of the review
+        tests:
+          - not_null
+          - unique
