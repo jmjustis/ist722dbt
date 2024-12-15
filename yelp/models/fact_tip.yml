@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: fact_tip
+    description: Tip level fact table. Transaction one row per tip
+    columns:
+      - name: tip_id
+        description: Degenerate dimension for the tip
+        tests:
+          - unique
+          - not_null
+      - name: userkey
+        description: Dimension key for dim_user
+      - name: businesskey
+        description: Dimension key for dim_business
+      - name: DATE
+        description: Column representing the date of the tip
+      - name: COMPLIMENT_COUNT
+        description: Number of compliments the tip recieved
+      - name: TEXT
+        description: Column containing the text from the tip
