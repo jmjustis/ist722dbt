@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_tip_text
+    description: Tip Dimension. One row per tip
+    columns:
+      - name: tipkey
+        description: The surrogate key of the tip
+        tests:
+          - not_null
+          - unique
+      - name: tip_id
+        description: The business / source key of the tip
+        tests:
+          - not_null
+          - unique
