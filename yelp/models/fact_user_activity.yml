@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: fact_user_activity
+    description: User level fact table. Transaction one row per user
+    columns:
+      - name: user_id
+        description: Degenerate dimension for the user
+        tests:
+          - unique
+          - not_null
+      - name: review_count
+        description: Number of reviews user has given
+      - name: useful
+        description: Useful rating on reviews from user
+      - name: funny
+        description: Funny rating on reviews from user
+      - name: cool
+        description: Cool rating on reviews from user
+      - name: TEXT
+        description: Column containing the text from the tip

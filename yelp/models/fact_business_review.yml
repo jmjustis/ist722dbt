@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: fact_business_review
+    description: Review level fact table. Transaction one row per review
+    columns:
+      - name: review_id
+        description: Degenerate dimension for the review
+        tests:
+          - unique
+          - not_null
+      - name: userkey
+        description: Dimension key for dim_user
+      - name: businesskey
+        description: Dimension key for dim_business
+      - name: COOL
+        description: A column holding data representing a rating or score on a scale, possibly indicating the coolness or appeal of a reviewed item.
+      - name: DATE
+        description: The column represents timestamps indicating when a review was submitted.
+      - name: FUNNY
+        description: A column holding data representing the funniness rating on a scale from 0 to 12.
+      - name: STARS
+        description: The column represents user ratings on a scale of 1 to 5 stars.
+      - name: TEXT
+        description: Text data representing customer reviews.
+      - name: USEFUL
+        description: A column holding data representing user ratings on a scale from 0 to 10.
